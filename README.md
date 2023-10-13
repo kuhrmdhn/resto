@@ -8,8 +8,8 @@ Open terminal and do this
 ```
 $ git clone https://github.com/kuhrmdhn/resto.git
 $ cd resto
-$ code .
 ```
+Then open your code editor
 
 # Source
 [Egg Toast Image](https://www.freepik.com/free-photo/sandwich-with-egg-served-with-lettuce_7608193.htm#page=2&query=breakfast%20food&position=3&from_view=search&track=ais) from Freepik,
