@@ -14,17 +14,17 @@ specialDish.addEventListener("mouseleave", () => {
 
 // Mobile Navbar to Display Navigate Menu
 const barsMenu = document.getElementById("barsMenu");
-function handleMobileMenu () {
+function handleMobileMenu() {
   mobileNavigation.classList.toggle("top-24");
 }
 const mobileNavigation = document.getElementById("mobileNavigation");
 barsMenu.addEventListener("click", handleMobileMenu);
 
 // Close Mobile Navbar Menu when User Click Navigate
-const mobileNavigate = document.querySelectorAll(".mobile-navigate")
+const mobileNavigate = document.querySelectorAll(".mobile-navigate");
 mobileNavigate.forEach((navigate) => {
-  navigate.addEventListener("click", handleMobileMenu)
-})
+  navigate.addEventListener("click", handleMobileMenu);
+});
 
 // Handle Navbar for Displaying in Desktop/Mobile
 const desktopNavbar = document.getElementById("desktopNavbar");
@@ -82,13 +82,12 @@ for (let i = 0; i < chefInfo.length; i++) {
   chefInfo[i].addEventListener("mouseover", () => {
     chefInfo[i].style.height = "25%";
     // hiddenInfo[i].style.display = "block";
-    hiddenInfo[i].style.opacity = "1"
+    hiddenInfo[i].style.opacity = "1";
   });
 
   chefInfo[i].addEventListener("mouseleave", () => {
     chefInfo[i].style.height = "16.666667%";
     // hiddenInfo[i].style.display = "none";
     hiddenInfo[i].style.opacity = "0";
-
   });
 }
