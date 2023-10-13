@@ -18,4 +18,4 @@ $ code .
 
 Another Image and UI by [FREEHTML5.CO](https://freehtml5.co/resto-free-responsive-bootstrap-4-template-for-restaurants/),
 
-Font [Jesefin Sans](https://fonts.google.com/specimen/Josefin+Sans?query=josefin) from Google Fonts.
+Font [Jesefin Sans](https://fonts.google.com/specimen/Josefin+Sans?query=josefin) from Google Fonts, Github [josefinsans](https://github.com/googlefonts/josefinsans)
