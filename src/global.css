@@ -1,0 +1,159 @@
+/* Custom CSS */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.block {
+    display: block;
+}
+
+.details {
+    transition: height 1s ease-in-out;
+}
+
+.details[open] summary~* {
+    animation: sweep .8s ease-in-out;
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        margin-left: -10px
+    }
+
+    100% {
+        opacity: 1;
+        margin-left: 0px
+    }
+}
+
+.details summary {
+    cursor: pointer;
+    transition: margin 150ms ease-out;
+}
+
+.details[open] summary {
+    margin-bottom: 10px;
+}
+
+.details>summary {
+    list-style-type: "";
+}
+
+.details[open]>summary {
+    list-style-type: "";
+}
+
+.chef-1 {
+    background: url(../src/images/chef-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 900px;
+    max-width: 450px;
+}
+
+.chef-2 {
+    background: url(../src/images/chef-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 900px;
+    max-width: 450px;
+}
+
+.chef-3 {
+    /* height: 80%; */
+    background: url(../src/images/chef-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 900px;
+    max-width: 450px;
+}
+
+.max-h-900 {
+    max-height: 900px;
+}
+
+.h-900 {
+    height: 900px;
+}
+
+.max-h-700 {
+    max-height: 700px;
+}
+
+.h-500 {
+    height: 500px;
+}
+
+.max-h-500 {
+    max-height: 500px;
+}
+
+.h-80-screen {
+    height: 80vh;
+}
+
+.chef-info {
+    transition: height .4s ease-in-out .2ms;
+}
+
+.max-h-1300 {
+    max-height: 1300px;
+}
+
+.max-h-1400 {
+    max-height: 1400px;
+}
+
+.max-h-900 {
+    max-height: 900px;
+}
+
+.h-1400 {
+    height: 1400px;
+}
+
+.reservation {
+    background: url(../src/images/reservation-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.h-140-screen {
+    height: 140vh;
+}
+
+.min-h-400 {
+    min-height: 400px;
+}
+
+.h-400 {
+    height: 400px;
+}
+
+.text-xxs {
+    font-size: 10px;
+}
+
+@media screen and (min-width:250px) {
+    .h-140-screen {
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .h-140-screen {
+        height: 120vh;
+    }
+}
+
+@media screen and (min-width: 648px) {
+    .h-140-screen {
+        height: 140vh;
+    }
+}

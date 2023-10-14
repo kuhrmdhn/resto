@@ -15,7 +15,7 @@ specialDish.addEventListener("mouseleave", () => {
 // Mobile Navbar to Display Navigate Menu
 const barsMenu = document.getElementById("barsMenu");
 function handleMobileMenu() {
-  mobileNavigation.classList.toggle("top-24");
+  mobileNavigation.classList.toggle("top-12");
 }
 const mobileNavigation = document.getElementById("mobileNavigation");
 barsMenu.addEventListener("click", handleMobileMenu);
@@ -50,9 +50,9 @@ window.addEventListener("load", () => {
 
 // Slide Image
 const images = [
-  "./src/images/hero-1.jpg",
-  "./src/images/hero-2.jpg",
-  "./src/images/hero-3.jpg",
+  "./images/hero-1.jpg",
+  "./images/hero-2.jpg",
+  "./images/hero-3.jpg",
 ];
 const nextButton = document.getElementById("next");
 const prevButton = document.getElementById("prev");

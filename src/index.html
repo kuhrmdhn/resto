@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resto | Restaurant</title>
     <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Freehand&family=Josefin+Sans:wght@300&family=Poppins:wght@500&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script
       src="https://kit.fontawesome.com/e515c07cdd.js"
       crossorigin="anonymous"
@@ -52,7 +52,7 @@
                   >
                     <a
                       class="hover:bg-gray-100 inline-block w-full text-center"
-                      href="#beefMenu"
+                      href="#specialMenu"
                       >Beef Steak Sauce</a
                     >
                     <a
@@ -69,7 +69,7 @@
             <a href="#home" class="cursor-pointer"
               ><img
                 class="w-30 h-12"
-                src="./src/images/logo.png"
+                src="./images/logo.png"
                 alt="Resto Logo"
             /></a>
           </div>
@@ -106,7 +106,7 @@
           <a href="#home"
             ><img
               class="w-full h-full"
-              src="./src/images/logo.png"
+              src="./images/logo.png"
               alt="Resto Logo"
           /></a>
         </div>
@@ -120,22 +120,22 @@
           <ul class="h-full w-full flex flex-col justify-evenly">
             <li>
               <a
-                class="hover:text-red-400 transition-colors mobile-navigate"
+                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
                 href="#home"
                 >Home</a
               >
             </li>
             <li>
               <a
-                class="hover:text-red-400 transition-colors mobile-navigate"
+                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
                 href="#about"
                 >About</a
               >
             </li>
             <li>
-              <details class="flex flex-col details">
+              <details class="flex flex-col details text-sm">
                 <summary>Special Dishes</summary>
-                <a class="my-2 mobile-navigate" href="#beefMenu"
+                <a class="my-2 mobile-navigate" href="#specialMenu"
                   >Beef Steak Sauce</a
                 >
                 <a class="mobile-navigate" href="#salmonMenu"
@@ -145,21 +145,21 @@
             </li>
             <li>
               <a
-                class="hover:text-red-400 transition-colors mobile-navigate"
+                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
                 href="#menu"
                 >Menu</a
               >
             </li>
             <li>
               <a
-                class="hover:text-red-400 transition-colors mobile-navigate"
+                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
                 href="#team"
                 >Team</a
               >
             </li>
             <li>
               <a
-                class="hover:text-red-400 transition-colors mobile-navigate"
+                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
                 href="#reservation"
                 >Reservation</a
               >
@@ -184,7 +184,7 @@
           <div class="w-8/12 h-20 sm:mt-10">
             <a
               href="#menu"
-              class="bg-red-500 w-38 px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xxs sm:text-sm lg:text-base font-light sm:font-extrabold text-white hover:bg-red-600 transition-colors"
+              class="bg-red-500 w-38 px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base font-light sm:font-extrabold text-white hover:bg-red-600 transition-colors"
             >
               Explore Menu
             </a>
@@ -192,15 +192,15 @@
           <ul class="flex justify-around w-11/12 lg:w-8/12 sm:w-9/12 font-bold">
             <li class="border-r w-max p-2 pr-6 text-center">
               <i class="fa-solid fa-bell-concierge mb-2 md:text-2xl"></i>
-              <p class="md:text-base lg:text-sm text-xxs">Fast Delivery</p>
+              <p class="md:text-base lg:text-sm text-xs">Fast Delivery</p>
             </li>
             <li class="border-r w-max p-2 pr-6 text-center">
               <i class="fa-solid fa-seedling mb-2 md:text-2xl"></i>
-              <p class="md:text-base lg:text-sm text-xxs">Fresh Food</p>
+              <p class="md:text-base lg:text-sm text-xs">Fresh Food</p>
             </li>
             <li class="w-max p-2 text-center">
               <i class="fa-solid fa-comments mb-2 md:text-2xl"></i>
-              <p class="md:text-base lg:text-sm text-xxs">24/7 Support</p>
+              <p class="md:text-base lg:text-sm text-xs">24/7 Support</p>
             </li>
           </ul>
         </article>
@@ -231,7 +231,7 @@
       >
         <aside class="lg:h-5/6 w-8/12 sm:w-5/12 max-w-lg">
           <img
-            src="./src/images/hero-2.jpg"
+            src="./images/hero-2.jpg"
             class="w-full sm:w-11/12"
             alt="About Image"
           />
@@ -267,7 +267,7 @@
               <li class="h-max p-3 flex flex-col items-center">
                 <img
                   class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md"
-                  src="./src/images/steak.jpg"
+                  src="./images/steak.jpg"
                   alt="Menu"
                 />
                 <p class="text-xs sm:text-sm lg:text-base">Beef Steak Sauce</p>
@@ -275,7 +275,7 @@
               <li class="h-max p-3 flex flex-col items-center">
                 <img
                   class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md"
-                  src="./src/images/hero-1.jpg"
+                  src="./images/hero-1.jpg"
                   alt="Menu"
                 />
                 <p class="text-xs sm:text-sm lg:text-base">Australian Beef</p>
@@ -283,7 +283,7 @@
               <li class="h-max p-3 flex flex-col items-center">
                 <img
                   class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md"
-                  src="./src/images/salmon-zucchini.jpg"
+                  src="./images/salmon-zucchini.jpg"
                   alt="Menu"
                 />
                 <p class="text-xs sm:text-sm lg:text-base">Salmon Zucchini</p>
@@ -294,9 +294,8 @@
       </section>
       <!-- Special Menu -->
       <section
+        id="specialMenu"
         class="w-full max-h-1400 pt-16 bg-gray-50"
-        data-aos="fade-up"
-        data-aos-duration="600"
       >
         <div class="w-full flex flex-col justify-center items-center">
           <p class="text-red-400 text-sm sm:text-lg md:text-xl">Specialties</p>
@@ -307,8 +306,7 @@
         <div class="w-full flex flex-col items-center">
           <!-- Beef Steak Sauce -->
           <div
-            id="beefMenu"
-            class="w-10/12 max-h-700 lg:pt-32 flex justify-around scroll-mt-44"
+            class="w-10/12 max-h-700 lg:pt-20 flex justify-around"
             data-aos="fade-up"
             data-aos-duration="800"
           >
@@ -317,7 +315,7 @@
                 Beef Steak Sauce
               </h3>
               <div
-                class="w-full text-xxs sm:text-sm md:text-base xl:text-lg text-justify"
+                class="w-full text-xs sm:text-sm md:text-base xl:text-lg text-justify"
               >
                 <p>
                   Experience culinary bliss with our Beef Steak Sauce. Indulge
@@ -341,7 +339,7 @@
               </div>
             </article>
             <aside class="w-2/5">
-              <img src="./src/images/steak.jpg" alt="Beef Steak Sauce" />
+              <img src="./images/steak.jpg" alt="Beef Steak Sauce" />
             </aside>
           </div>
           <!-- Salmon Zucchini -->
@@ -353,7 +351,7 @@
           >
             <aside class="w-2/5">
               <img
-                src="./src/images/salmon-zucchini.jpg"
+                src="./images/salmon-zucchini.jpg"
                 alt="Salmon Zucchini"
               />
             </aside>
@@ -362,7 +360,7 @@
                 Salmon Zucchini
               </h3>
               <div
-                class="w-full text-xxs sm:text-sm md:text-base xl:text-lg text-justify"
+                class="w-full text-xs sm:text-sm md:text-base xl:text-lg text-justify"
               >
                 <p>
                   Immerse yourself in a culinary masterpiece that celebrates the
@@ -416,7 +414,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/breakfast-1.jpg"
+                  src="./images/breakfast-1.jpg"
                   alt="Egg Sandwich"
                 />
               </div>
@@ -436,7 +434,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/breakfast-2.png"
+                  src="./images/breakfast-2.png"
                   alt="Egg Toast"
                 />
               </div>
@@ -456,7 +454,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/breakfast-3.jpg"
+                  src="./images/breakfast-3.jpg"
                   alt="Egg Bacon"
                 />
               </div>
@@ -484,7 +482,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/steak.jpg"
+                  src="./images/steak.jpg"
                   alt="Beef Steak Sauce"
                 />
               </div>
@@ -504,7 +502,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/salmon-zucchini.jpg"
+                  src="./images/salmon-zucchini.jpg"
                   alt="Salmon Zucchini"
                 />
               </div>
@@ -524,7 +522,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/hero-1.jpg"
+                  src="./images/hero-1.jpg"
                   alt="Australian Beef"
                 />
               </div>
@@ -552,7 +550,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/hero-1.jpg"
+                  src="./images/hero-1.jpg"
                   alt="Australian Beef"
                 />
               </div>
@@ -572,7 +570,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/hero-2.jpg"
+                  src="./images/hero-2.jpg"
                   alt="Waffles"
                 />
               </div>
@@ -592,7 +590,7 @@
               <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
                 <img
                   class="w-full h-full rounded-full"
-                  src="./src/images/hero-3.jpg"
+                  src="./images/hero-3.jpg"
                   alt="Pumpkin Soup"
                 />
               </div>
@@ -846,7 +844,7 @@
         </div>
       </section>
     </footer>
-    <script src="./src/script.js"></script>
+    <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
