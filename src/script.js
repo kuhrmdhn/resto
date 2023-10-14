@@ -50,9 +50,9 @@ window.addEventListener("load", () => {
 
 // Slide Image
 const images = [
-  "./images/hero-1.jpg",
-  "./images/hero-2.jpg",
-  "./images/hero-3.jpg",
+  "./src/images/hero-1.jpg",
+  "./src/images/hero-2.jpg",
+  "./src/images/hero-3.jpg",
 ];
 const nextButton = document.getElementById("next");
 const prevButton = document.getElementById("prev");
