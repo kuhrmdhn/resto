@@ -3,20 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resto is a landing page to promote Resto restaurants which is created in such a way for a better user experience. Users will have a good browsing experience on mobile, tablet and desktop.">
     <title>Resto | Restaurant</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="/src/global.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Freehand&family=Josefin+Sans:wght@300&family=Poppins:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/e515c07cdd.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   </head>
   <body class="bg-red-50">
     <!-- Desktop Navbar -->
@@ -110,7 +102,7 @@
               alt="Resto Logo"
           /></a>
         </div>
-        <button id="barsMenu" type="button">
+        <button id="barsMenu" type="button" name="menu navigation for mobile navbar" aria-label="Bars Navigation for mobile">
           <i class="fa-solid fa-bars text-sm"></i>
         </button>
         <nav
@@ -184,7 +176,7 @@
           <div class="w-8/12 h-20 sm:mt-10">
             <a
               href="#menu"
-              class="bg-red-500 w-38 px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base font-light sm:font-extrabold text-white hover:bg-red-600 transition-colors"
+              class="bg-red-500 w-38 px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base sm:font-extrabold text-white hover:bg-red-600 transition-colors font-bold"
             >
               Explore Menu
             </a>
@@ -206,7 +198,7 @@
         </article>
         <aside class="w-1/2 h-fit flex justify-center">
           <div class="w-9/12 relative">
-            <img id="heroImage" class="rounded-xl" alt="Hero Images" />
+            <img id="heroImage" class="rounded-xl w-full h-full" alt="Hero Images" />
             <div
               class="text-xs sm:text-lg md:text-xl absolute top-0 w-full h-full flex items-center justify-between sm:px-4"
             >
@@ -232,7 +224,7 @@
         <aside class="lg:h-5/6 w-8/12 sm:w-5/12 max-w-lg">
           <img
             src="./src/images/hero-2.jpg"
-            class="w-full sm:w-11/12"
+            class="w-full sm:w-11/12 h-full"
             alt="About Image"
           />
         </aside>
@@ -240,7 +232,7 @@
           class="w-11/12 sm:w-7/12 lg:w-5/12 h-full flex flex-col justify-evenly mt-7"
         >
           <div>
-            <p class="text-red-400 text-xs lg:text-lg">About</p>
+            <p class="text-red-400 text-xs lg:text-lg font-semibold">About</p>
             <h2 class="sm:text-3xl lg:text-4xl font-extrabold">
               Welcome to Resto
             </h2>
@@ -298,7 +290,7 @@
         class="w-full max-h-1400 pt-16 bg-gray-50"
       >
         <div class="w-full flex flex-col justify-center items-center">
-          <p class="text-red-400 text-sm sm:text-lg md:text-xl">Specialties</p>
+          <p class="text-red-400 text-sm sm:text-lg md:text-xl font-semibold">Specialties</p>
           <h2 class="text-lg sm:text-xl md:text-2xl xl:text-4xl font-extrabold">
             Special Dishes
           </h2>
@@ -339,7 +331,7 @@
               </div>
             </article>
             <aside class="w-2/5">
-              <img src="./src/images/steak.jpg" alt="Beef Steak Sauce" />
+              <img src="./src/images/steak.jpg" alt="Beef Steak Sauce" class="w-full h-1/2"/>
             </aside>
           </div>
           <!-- Salmon Zucchini -->
@@ -353,6 +345,7 @@
               <img
                 src="./src/images/salmon-zucchini.jpg"
                 alt="Salmon Zucchini"
+                class="w-full h-1/2"
               />
             </aside>
             <article class="w-2/5 flex flex-col gap-2 lg:gap-6">
@@ -782,6 +775,7 @@
               <button
                 id="submitReservation"
                 type="submit"
+                name="submit form for reservations"
                 class="bg-red-500 h-6 md:h-10 flex justify-center items-center rounded-full px-4 py-4 text-sm md:text-lg font-[700] text-white hover:bg-red-600 duration-300"
               >
                 Send Message
