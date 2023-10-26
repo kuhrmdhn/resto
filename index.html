@@ -1,847 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Resto is a landing page to promote Resto restaurants which is created in such a way for a better user experience. Users will have a good browsing experience on mobile, tablet and desktop.">
-    <title>Resto | Restaurant</title>
-    <link href="/dist/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/src/global.css">
-    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  </head>
-  <body class="bg-red-50">
-    <!-- Desktop Navbar -->
-    <header id="desktopNavbar" class="h-24 w-full fixed z-50 text-lg">
-      <section class="flex justify-center items-center w-full h-full">
-        <div
-          class="h-full max-w-screen-2xl w-full bg-white flex justify-center border-b-2"
-        >
-          <nav class="h-full w-1/4 flex justify-center items-center">
-            <ul class="h-full w-full flex justify-around items-center">
-              <li>
-                <a class="hover:text-red-400 transition-colors" href="#home"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-red-400 transition-colors" href="#about"
-                  >About</a
-                >
-              </li>
-              <li id="specialDish" class="relative h-full flex justify-center">
-                <p
-                  class="hover:text-red-400 transition-colors flex gap-3 items-center cursor-pointer"
-                >
-                  Special Dishes <i class="fa-solid fa-caret-down"></i>
-                </p>
-                <div
-                  id="dishList"
-                  class="absolute top-16 bg-white opacity-0 h-20 w-40 border-b-4 border-red-500"
-                >
-                  <div
-                    class="h-full flex justify-center items-center flex-col shadow-sm shadow-red-500"
-                  >
-                    <a
-                      class="hover:bg-gray-100 inline-block w-full text-center"
-                      href="#specialMenu"
-                      >Beef Steak Sauce</a
-                    >
-                    <a
-                      class="hover:bg-gray-100 inline-block w-full text-center"
-                      href="#salmonMenu"
-                      >Salmon Zucchini</a
-                    >
-                  </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Resto is a landing page to promote Resto restaurants which is created in such a way for a better user experience. Users will have a good browsing experience on mobile, tablet and desktop." />
+  <title>Resto | Restaurant</title>
+  <link href="/dist/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/global.css" />
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://kit.fontawesome.com/e515c07cdd.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-red-50">
+  <!-- Desktop Navbar -->
+  <header id="desktopNavbar" class="h-24 w-full fixed z-50 text-lg">
+    <section class="flex justify-center items-center w-full h-full">
+      <div class="h-full max-w-screen-2xl w-full bg-white flex justify-center border-b-2">
+        <nav class="h-full w-1/4 flex justify-center items-center">
+          <ul class="h-full w-full flex justify-around items-center">
+            <li>
+              <a class="hover:text-red-400 transition-colors" href="#home">Home</a>
+            </li>
+            <li>
+              <a class="hover:text-red-400 transition-colors" href="#about">About</a>
+            </li>
+            <li id="specialDish" class="relative h-full flex justify-center">
+              <p class="hover:text-red-400 transition-colors flex gap-3 items-center cursor-pointer">
+                Special Dishes <i class="fa-solid fa-caret-down"></i>
+              </p>
+              <div id="dishList" class="absolute top-16 bg-white opacity-0 h-20 w-40 border-b-4 border-red-500">
+                <div class="h-full flex justify-center items-center flex-col shadow-sm shadow-red-500">
+                  <a class="hover:bg-gray-100 inline-block w-full text-center" href="#specialMenu">Beef Steak Sauce</a>
+                  <a class="hover:bg-gray-100 inline-block w-full text-center" href="#salmonMenu">Salmon Zucchini</a>
                 </div>
-              </li>
-            </ul>
-          </nav>
-          <div class="h-full w-1/4 flex justify-center items-center">
-            <a href="#home" class="cursor-pointer"
-              ><img
-                class="w-30 h-12"
-                src="./src/images/logo.png"
-                alt="Resto Logo"
-            /></a>
-          </div>
-          <nav class="h-full w-1/4">
-            <ul class="w-full h-full flex justify-around items-center">
-              <li>
-                <a class="hover:text-red-400 transition-colors" href="#menu"
-                  >Menu</a
-                >
-              </li>
-              <li>
-                <a class="hover:text-red-400 transition-colors" href="#team"
-                  >Team</a
-                >
-              </li>
-              <li>
-                <a
-                  class="hover:text-red-400 transition-colors"
-                  href="#reservation"
-                  >Reservation</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-    </header>
-    <!-- Mobile Navbar -->
-    <header id="mobileNavbar" class="h-16 w-full bg-white fixed top-0 z-50">
-      <section
-        class="flex items-center justify-around h-full w-full border-b-2"
-      >
-        <div class="h-6 w-18 bg-white">
-          <a href="#home"
-            ><img
-              class="w-full h-full"
-              src="./src/images/logo.png"
-              alt="Resto Logo"
-          /></a>
-        </div>
-        <button id="barsMenu" type="button" name="menu navigation for mobile navbar" aria-label="Bars Navigation for mobile">
-          <i class="fa-solid fa-bars text-sm"></i>
-        </button>
-        <nav
-          id="mobileNavigation"
-          class="h-80 w-full px-9 bg-white absolute -top-80 z-10 duration-300"
-        >
-          <ul class="h-full w-full flex flex-col justify-evenly">
-            <li>
-              <a
-                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
-                href="#home"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
-                href="#about"
-                >About</a
-              >
-            </li>
-            <li>
-              <details class="flex flex-col details text-sm">
-                <summary>Special Dishes</summary>
-                <a class="my-2 mobile-navigate" href="#specialMenu"
-                  >Beef Steak Sauce</a
-                >
-                <a class="mobile-navigate" href="#salmonMenu"
-                  >Salmon Zucchini</a
-                >
-              </details>
-            </li>
-            <li>
-              <a
-                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
-                href="#menu"
-                >Menu</a
-              >
-            </li>
-            <li>
-              <a
-                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
-                href="#team"
-                >Team</a
-              >
-            </li>
-            <li>
-              <a
-                class="hover:text-red-400 text-sm transition-colors mobile-navigate"
-                href="#reservation"
-                >Reservation</a
-              >
+              </div>
             </li>
           </ul>
         </nav>
-      </section>
-    </header>
-    <!-- Content -->
-    <main
-      class="max-w-screen-2xl w-full flex flex-col items-center bg-white mx-auto"
-    >
-      <!-- Home -->
-      <section id="home" class="w-full pt-32 mb-10 min-h-400 flex">
-        <article class="w-1/2 h-full flex flex-col justify-evenly items-center">
-          <div
-            class="w-8/12 h-1/3 flex flex-col justify-start sm:text-3xl md:text-4xl xl:text-5xl mb-3"
-          >
-            <h1>We Love</h1>
-            <h1>Delicious Foods!</h1>
-          </div>
-          <div class="w-8/12 h-20 sm:mt-10">
-            <a
-              href="#menu"
-              class="bg-red-500 w-38 px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base sm:font-extrabold text-white hover:bg-red-600 transition-colors font-bold"
-            >
-              Explore Menu
-            </a>
-          </div>
-          <ul class="flex justify-around w-11/12 lg:w-8/12 sm:w-9/12 font-bold">
-            <li class="border-r w-max p-2 pr-6 text-center">
-              <i class="fa-solid fa-bell-concierge mb-2 md:text-2xl"></i>
-              <p class="md:text-base lg:text-sm text-xs">Fast Delivery</p>
+        <div class="h-full w-1/4 flex justify-center items-center">
+          <a href="#home" class="cursor-pointer"><img class="w-30 h-12" src="./src/images/logo.png"
+              alt="Resto Logo" /></a>
+        </div>
+        <nav class="h-full w-1/4">
+          <ul class="w-full h-full flex justify-around items-center">
+            <li>
+              <a class="hover:text-red-400 transition-colors" href="#menu">Menu</a>
             </li>
-            <li class="border-r w-max p-2 pr-6 text-center">
-              <i class="fa-solid fa-seedling mb-2 md:text-2xl"></i>
-              <p class="md:text-base lg:text-sm text-xs">Fresh Food</p>
+            <li>
+              <a class="hover:text-red-400 transition-colors" href="#team">Team</a>
             </li>
-            <li class="w-max p-2 text-center">
-              <i class="fa-solid fa-comments mb-2 md:text-2xl"></i>
-              <p class="md:text-base lg:text-sm text-xs">24/7 Support</p>
+            <li>
+              <a class="hover:text-red-400 transition-colors" href="#reservation">Reservation</a>
             </li>
           </ul>
-        </article>
-        <aside class="w-1/2 h-fit flex justify-center">
-          <div class="w-9/12 relative">
-            <img id="heroImage" class="rounded-xl w-full h-full" alt="Hero Images" />
-            <div
-              class="text-xs sm:text-lg md:text-xl absolute top-0 w-full h-full flex items-center justify-between sm:px-4"
-            >
-              <i
-                id="prev"
-                class="text-red-400 hover:text-red-600 fa-solid fa-arrow-left p-1 sm:p-3 hover:bg-red-50 rounded-full cursor-pointer transition duration-300"
-              ></i>
-              <i
-                id="next"
-                class="text-red-400 hover:text-red-600 fa-solid fa-arrow-right p-1 sm:p-3 hover:bg-red-50 rounded-full cursor-pointer transition duration-300"
-              ></i>
-            </div>
+        </nav>
+      </div>
+    </section>
+  </header>
+  <!-- Mobile Navbar -->
+  <header id="mobileNavbar" class="h-16 w-full bg-white fixed top-0 z-50">
+    <section class="flex items-center justify-around h-full w-full border-b-2">
+      <div class="h-6 w-18 bg-white">
+        <a href="#home"><img class="w-full h-full" src="./src/images/logo.png" alt="Resto Logo" /></a>
+      </div>
+      <button id="barsMenu" type="button" name="menu navigation for mobile navbar"
+        aria-label="Bars Navigation for mobile">
+        <i class="fa-solid fa-bars text-sm"></i>
+      </button>
+      <nav id="mobileNavigation" class="h-80 w-full px-9 bg-white absolute -top-80 z-10 duration-300">
+        <ul class="h-full w-full flex flex-col justify-evenly">
+          <li>
+            <a class="hover:text-red-400 text-sm transition-colors mobile-navigate" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="hover:text-red-400 text-sm transition-colors mobile-navigate" href="#about">About</a>
+          </li>
+          <li>
+            <details class="flex flex-col details text-sm">
+              <summary>Special Dishes</summary>
+              <a class="my-2 mobile-navigate" href="#specialMenu">Beef Steak Sauce</a>
+              <a class="mobile-navigate" href="#salmonMenu">Salmon Zucchini</a>
+            </details>
+          </li>
+          <li>
+            <a class="hover:text-red-400 text-sm transition-colors mobile-navigate" href="#menu">Menu</a>
+          </li>
+          <li>
+            <a class="hover:text-red-400 text-sm transition-colors mobile-navigate" href="#team">Team</a>
+          </li>
+          <li>
+            <a class="hover:text-red-400 text-sm transition-colors mobile-navigate" href="#reservation">Reservation</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <!-- Content -->
+  <main class="max-w-screen-2xl w-full flex flex-col items-center bg-white mx-auto">
+    <!-- Home -->
+    <section id="home" class="w-full pt-32 mb-10 min-h-400 flex">
+      <article class="w-1/2 h-full flex flex-col justify-evenly items-center">
+        <div class="w-8/12 h-1/3 flex flex-col justify-start sm:text-3xl md:text-4xl xl:text-5xl mb-3">
+          <h1>We Love</h1>
+          <h1>Delicious Foods!</h1>
+        </div>
+        <div class="w-8/12 h-20 sm:mt-10">
+          <a href="#menu"
+            class="bg-red-500 w-38 px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm lg:text-base sm:font-extrabold text-white hover:bg-red-600 transition-colors font-bold">
+            Explore Menu
+          </a>
+        </div>
+        <ul class="flex justify-around w-11/12 lg:w-8/12 sm:w-9/12 font-bold">
+          <li class="border-r w-max p-2 pr-6 text-center">
+            <i class="fa-solid fa-bell-concierge mb-2 md:text-2xl"></i>
+            <p class="md:text-base lg:text-sm text-xs">Fast Delivery</p>
+          </li>
+          <li class="border-r w-max p-2 pr-6 text-center">
+            <i class="fa-solid fa-seedling mb-2 md:text-2xl"></i>
+            <p class="md:text-base lg:text-sm text-xs">Fresh Food</p>
+          </li>
+          <li class="w-max p-2 text-center">
+            <i class="fa-solid fa-comments mb-2 md:text-2xl"></i>
+            <p class="md:text-base lg:text-sm text-xs">24/7 Support</p>
+          </li>
+        </ul>
+      </article>
+      <aside class="w-1/2 h-fit flex justify-center">
+        <div class="w-9/12 relative">
+          <img id="heroImage" class="rounded-xl w-full h-full" alt="Hero Images" />
+          <div
+            class="text-xs sm:text-lg md:text-xl absolute top-0 w-full h-full flex items-center justify-between sm:px-4">
+            <i id="prev"
+              class="text-red-400 hover:text-red-600 fa-solid fa-arrow-left p-1 sm:p-3 hover:bg-red-50 rounded-full cursor-pointer transition duration-300"></i>
+            <i id="next"
+              class="text-red-400 hover:text-red-600 fa-solid fa-arrow-right p-1 sm:p-3 hover:bg-red-50 rounded-full cursor-pointer transition duration-300"></i>
           </div>
-        </aside>
-      </section>
-      <!-- About -->
-      <section
-        id="about"
-        class="max-h-900 sm:h-screen h-max w-full sm:mt-20 flex flex-col lg:flex-row items-center justify-around scroll-mt-40"
-        data-aos="fade-up"
-        data-aos-duration="600"
-      >
-        <aside class="lg:h-5/6 w-8/12 sm:w-5/12 max-w-lg">
-          <img
-            src="./src/images/hero-2.jpg"
-            class="w-full sm:w-11/12 h-full"
-            alt="About Image"
-          />
-        </aside>
-        <article
-          class="w-11/12 sm:w-7/12 lg:w-5/12 h-full flex flex-col justify-evenly mt-7"
-        >
-          <div>
-            <p class="text-red-400 text-xs lg:text-lg font-semibold">About</p>
-            <h2 class="sm:text-3xl lg:text-4xl font-extrabold">
-              Welcome to Resto
-            </h2>
-          </div>
-          <div class="text-justify text-xs sm:text-sm lg:text-base">
-            <p>
-              At Resto Delight, we create unforgettable culinary experiences.
-              Since 2005, we've been committed to delivering delectable dishes
-              and top-notch service to each of our patrons. We're a restaurant
-              dedicated to blending traditional flavors with a modern twist.
-              With our talented and experienced culinary team, we bring you
-              authentic dishes that will tantalize your taste buds. We're not
-              just a restaurant; we're a part of the community, dedicated to
-              creating memorable experiences for you and your family. Join us at
-              Resto Delight and let's savor the delights of our dishes together.
-              Discover your favorite dish today!
-            </p>
-          </div>
-          <div>
-            <h2 class="text-lg sm:text-xl lg:text-3xl font-extrabold">
-              Special Recipe
-            </h2>
-            <ul class="flex flex-wrap justify-evenly w-full">
-              <li class="h-max p-3 flex flex-col items-center">
-                <img
-                  class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md"
-                  src="./src/images/steak.jpg"
-                  alt="Menu"
-                />
-                <p class="text-xs sm:text-sm lg:text-base">Beef Steak Sauce</p>
-              </li>
-              <li class="h-max p-3 flex flex-col items-center">
-                <img
-                  class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md"
-                  src="./src/images/hero-1.jpg"
-                  alt="Menu"
-                />
-                <p class="text-xs sm:text-sm lg:text-base">Australian Beef</p>
-              </li>
-              <li class="h-max p-3 flex flex-col items-center">
-                <img
-                  class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md"
-                  src="./src/images/salmon-zucchini.jpg"
-                  alt="Menu"
-                />
-                <p class="text-xs sm:text-sm lg:text-base">Salmon Zucchini</p>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </section>
-      <!-- Special Menu -->
-      <section
-        id="specialMenu"
-        class="w-full max-h-1400 pt-16 bg-gray-50"
-      >
-        <div class="w-full flex flex-col justify-center items-center">
-          <p class="text-red-400 text-sm sm:text-lg md:text-xl font-semibold">Specialties</p>
-          <h2 class="text-lg sm:text-xl md:text-2xl xl:text-4xl font-extrabold">
-            Special Dishes
+        </div>
+      </aside>
+    </section>
+    <!-- About -->
+    <section id="about"
+      class="max-h-900 sm:h-screen h-max w-full sm:mt-20 flex flex-col lg:flex-row items-center justify-around scroll-mt-40"
+      data-aos="fade-up" data-aos-duration="600">
+      <aside class="lg:h-5/6 w-8/12 sm:w-5/12 max-w-lg">
+        <img src="./src/images/hero-2.jpg" class="w-full sm:w-11/12 h-full" alt="About Image" />
+      </aside>
+      <article class="w-11/12 sm:w-7/12 lg:w-5/12 h-full flex flex-col justify-evenly mt-7">
+        <div>
+          <p class="text-red-400 text-xs lg:text-lg font-semibold">About</p>
+          <h2 class="sm:text-3xl lg:text-4xl font-extrabold">
+            Welcome to Resto
           </h2>
         </div>
-        <div class="w-full flex flex-col items-center">
-          <!-- Beef Steak Sauce -->
-          <div
-            class="w-10/12 max-h-700 lg:pt-20 flex justify-around"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
-            <article class="w-2/5 flex flex-col gap-2 lg:gap-6">
-              <h3 class="text-base sm:text-2xl lg:text-4xl font-extrabold">
-                Beef Steak Sauce
-              </h3>
-              <div
-                class="w-full text-xs sm:text-sm md:text-base xl:text-lg text-justify"
-              >
-                <p>
-                  Experience culinary bliss with our Beef Steak Sauce. Indulge
-                  in the succulent tenderness of perfectly grilled beef,
-                  elevated by our exquisite, handcrafted sauce. Each bite
-                  unveils a symphony of flavors, as the smoky char of the beef
-                  mingles with the rich, savory notes of the sauce. It's a
-                  sensory journey that tantalizes your taste buds and leaves an
-                  indelible mark on your palate. Whether you're a steak
-                  connoisseur or a casual diner, this dish promises a
-                  gastronomic adventure you won't soon forget. Discover the
-                  epitome of flavor and satisfaction, one exquisite bite at a
-                  time, with our Beef Steak Sauce.
-                </p>
-              </div>
-              <div>
-                <span
-                  class="font-extrabold text-sm sm:text-lg md:text-xl xl:text-3xl"
-                  >$15.00</span
-                >
-              </div>
-            </article>
-            <aside class="w-2/5">
-              <img src="./src/images/steak.jpg" alt="Beef Steak Sauce" class="w-full h-1/2"/>
-            </aside>
-          </div>
-          <!-- Salmon Zucchini -->
-          <div
-            id="salmonMenu"
-            class="w-10/12 py-7 lg:py-14 xl:py28 flex justify-around scroll-mt-44"
-            data-aos="fade-up"
-            data-aos-duration="800"
-          >
-            <aside class="w-2/5">
-              <img
-                src="./src/images/salmon-zucchini.jpg"
-                alt="Salmon Zucchini"
-                class="w-full h-1/2"
-              />
-            </aside>
-            <article class="w-2/5 flex flex-col gap-2 lg:gap-6">
-              <h3 class="text-base sm:text-2xl lg:text-4xl font-extrabold">
-                Salmon Zucchini
-              </h3>
-              <div
-                class="w-full text-xs sm:text-sm md:text-base xl:text-lg text-justify"
-              >
-                <p>
-                  Immerse yourself in a culinary masterpiece that celebrates the
-                  delicate harmony of flavors. Our Salmon Zucchini dish boasts
-                  succulent salmon fillets perfectly seared to flaky perfection,
-                  accompanied by tender zucchini spears. The salmon's buttery
-                  richness pairs flawlessly with the zucchini's mild, earthy
-                  notes. A drizzle of our signature herb-infused sauce elevates
-                  every bite, adding a burst of freshness. This dish is a
-                  celebration of both simplicity and sophistication, promising a
-                  journey of taste that captivates the senses. Experience the
-                  elegance of our Salmon Zucchini and let your palate revel in
-                  the extraordinary fusion of flavors.
-                </p>
-              </div>
-              <div>
-                <span
-                  class="font-extrabold text-sm sm:text-lg md:text-xl xl:text-3xl"
-                  >$12.00</span
-                >
-              </div>
-            </article>
-          </div>
+        <div class="text-justify text-xs sm:text-sm lg:text-base">
+          <p>
+            At Resto Delight, we create unforgettable culinary experiences.
+            Since 2005, we've been committed to delivering delectable dishes
+            and top-notch service to each of our patrons. We're a restaurant
+            dedicated to blending traditional flavors with a modern twist.
+            With our talented and experienced culinary team, we bring you
+            authentic dishes that will tantalize your taste buds. We're not
+            just a restaurant; we're a part of the community, dedicated to
+            creating memorable experiences for you and your family. Join us at
+            Resto Delight and let's savor the delights of our dishes together.
+            Discover your favorite dish today!
+          </p>
         </div>
-      </section>
-      <!-- Menu -->
-      <section
-        id="menu"
-        class="w-full sm:max-h-700 pt-16 md:pt-24 xl:pt-28 mb-10 flex flex-col items-center"
-      >
-        <h2
-          class="mb-14 md:mb-20 text-lg sm:text-xl md:text-2xl xl:text-4xl font-extrabold"
-        >
-          Our Menu
+        <div>
+          <h2 class="text-lg sm:text-xl lg:text-3xl font-extrabold">
+            Special Recipe
+          </h2>
+          <ul class="flex flex-wrap justify-evenly w-full">
+            <li class="h-max p-3 flex flex-col items-center">
+              <img class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md" src="./src/images/steak.jpg"
+                alt="Menu" />
+              <p class="text-xs sm:text-sm lg:text-base">Beef Steak Sauce</p>
+            </li>
+            <li class="h-max p-3 flex flex-col items-center">
+              <img class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md" src="./src/images/hero-1.jpg"
+                alt="Menu" />
+              <p class="text-xs sm:text-sm lg:text-base">Australian Beef</p>
+            </li>
+            <li class="h-max p-3 flex flex-col items-center">
+              <img class="h-16 w-16 sm:h-28 sm:w-28 lg:h-36 lg:w-36 rounded-md" src="./src/images/salmon-zucchini.jpg"
+                alt="Menu" />
+              <p class="text-xs sm:text-sm lg:text-base">Salmon Zucchini</p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <!-- Special Menu -->
+    <section id="specialMenu" class="w-full max-h-1400 pt-16 bg-gray-50">
+      <div class="w-full flex flex-col justify-center items-center">
+        <p class="text-red-400 text-sm sm:text-lg md:text-xl font-semibold">
+          Specialties
+        </p>
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-4xl font-extrabold">
+          Special Dishes
         </h2>
-        <div
-          class="w-full flex flex-col md:flex-row flex-wrap items-center md:justify-center"
-        >
-          <!-- Breakfast -->
-          <div
-            class="w-full md:w-1/2 text-center mb-16"
-            data-aos="fade-up"
-            data-aos-duration="600"
-          >
-            <h3 class="text-2xl md:text-3xl mb-5">Breakfast</h3>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/breakfast-1.jpg"
-                  alt="Egg Sandwich"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Egg Sandwich</p>
-                  <p>Egg, Lettuce</p>
-                </span>
-                <p class="text-xl md:text-2xl">$8</p>
-              </div>
+      </div>
+      <div class="w-full flex flex-col items-center">
+        <!-- Beef Steak Sauce -->
+        <div class="w-10/12 max-h-700 lg:pt-20 flex justify-around" data-aos="fade-up" data-aos-duration="800">
+          <article class="w-2/5 flex flex-col gap-2 lg:gap-6">
+            <h3 class="text-base sm:text-2xl lg:text-4xl font-extrabold">
+              Beef Steak Sauce
+            </h3>
+            <div class="w-full text-xs sm:text-sm md:text-base xl:text-lg text-justify">
+              <p>
+                Experience culinary bliss with our Beef Steak Sauce. Indulge
+                in the succulent tenderness of perfectly grilled beef,
+                elevated by our exquisite, handcrafted sauce. Each bite
+                unveils a symphony of flavors, as the smoky char of the beef
+                mingles with the rich, savory notes of the sauce. It's a
+                sensory journey that tantalizes your taste buds and leaves an
+                indelible mark on your palate. Whether you're a steak
+                connoisseur or a casual diner, this dish promises a
+                gastronomic adventure you won't soon forget. Discover the
+                epitome of flavor and satisfaction, one exquisite bite at a
+                time, with our Beef Steak Sauce.
+              </p>
             </div>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/breakfast-2.png"
-                  alt="Egg Toast"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Egg Toast</p>
-                  <p>Chicken Ham, cream, Egg</p>
-                </span>
-                <p class="text-xl md:text-2xl">$6</p>
-              </div>
+            <div>
+              <span class="font-extrabold text-sm sm:text-lg md:text-xl xl:text-3xl">$15.00</span>
             </div>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/breakfast-3.jpg"
-                  alt="Egg Bacon"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Egg Bacon</p>
-                  <p>Egg, Bacon, Sausage</p>
-                </span>
-                <p class="text-xl md:text-2xl">$7</p>
-              </div>
+          </article>
+          <aside class="w-2/5">
+            <img src="./src/images/steak.jpg" alt="Beef Steak Sauce" class="w-full h-1/2" />
+          </aside>
+        </div>
+        <!-- Salmon Zucchini -->
+        <div id="salmonMenu" class="w-10/12 py-7 lg:py-14 xl:py28 flex justify-around scroll-mt-44" data-aos="fade-up"
+          data-aos-duration="800">
+          <aside class="w-2/5">
+            <img src="./src/images/salmon-zucchini.jpg" alt="Salmon Zucchini" class="w-full h-1/2" />
+          </aside>
+          <article class="w-2/5 flex flex-col gap-2 lg:gap-6">
+            <h3 class="text-base sm:text-2xl lg:text-4xl font-extrabold">
+              Salmon Zucchini
+            </h3>
+            <div class="w-full text-xs sm:text-sm md:text-base xl:text-lg text-justify">
+              <p>
+                Immerse yourself in a culinary masterpiece that celebrates the
+                delicate harmony of flavors. Our Salmon Zucchini dish boasts
+                succulent salmon fillets perfectly seared to flaky perfection,
+                accompanied by tender zucchini spears. The salmon's buttery
+                richness pairs flawlessly with the zucchini's mild, earthy
+                notes. A drizzle of our signature herb-infused sauce elevates
+                every bite, adding a burst of freshness. This dish is a
+                celebration of both simplicity and sophistication, promising a
+                journey of taste that captivates the senses. Experience the
+                elegance of our Salmon Zucchini and let your palate revel in
+                the extraordinary fusion of flavors.
+              </p>
             </div>
-          </div>
-          <!-- Dish -->
-          <div
-            class="w-full md:w-1/2 text-center mb-16"
-            data-aos="fade-up"
-            data-aos-duration="600"
-          >
-            <h3 class="text-2xl md:text-3xl mb-5">Dish</h3>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/steak.jpg"
-                  alt="Beef Steak Sauce"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Beef Steak Sauce</p>
-                  <p>Beef, Special Sauce</p>
-                </span>
-                <p class="text-xl md:text-2xl">$15</p>
-              </div>
+            <div>
+              <span class="font-extrabold text-sm sm:text-lg md:text-xl xl:text-3xl">$12.00</span>
             </div>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/salmon-zucchini.jpg"
-                  alt="Salmon Zucchini"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Salmon Zucchini</p>
-                  <p>Salmon Fillets, Zucchini</p>
-                </span>
-                <p class="text-xl md:text-2xl">$12</p>
-              </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Menu -->
+    <section id="menu" class="w-full sm:max-h-700 pt-16 md:pt-24 xl:pt-28 mb-10 flex flex-col items-center">
+      <h2 class="mb-14 md:mb-20 text-lg sm:text-xl md:text-2xl xl:text-4xl font-extrabold">
+        Our Menu
+      </h2>
+      <div class="w-full flex flex-col md:flex-row flex-wrap items-center md:justify-center">
+        <!-- Breakfast -->
+        <div class="w-full md:w-1/2 text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+          <h3 class="text-2xl md:text-3xl mb-5">Breakfast</h3>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/breakfast-1.jpg" alt="Egg Sandwich" />
             </div>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/hero-1.jpg"
-                  alt="Australian Beef"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Australian Beef</p>
-                  <p>Strawberry, Banana, Beef</p>
-                </span>
-                <p class="text-xl md:text-2xl">$13</p>
-              </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Egg Sandwich</p>
+                <p>Egg, Lettuce</p>
+              </span>
+              <p class="text-xl md:text-2xl">$8</p>
             </div>
           </div>
-          <!-- Popular -->
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/breakfast-2.png" alt="Egg Toast" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Egg Toast</p>
+                <p>Chicken Ham, cream, Egg</p>
+              </span>
+              <p class="text-xl md:text-2xl">$6</p>
+            </div>
+          </div>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/breakfast-3.jpg" alt="Egg Bacon" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Egg Bacon</p>
+                <p>Egg, Bacon, Sausage</p>
+              </span>
+              <p class="text-xl md:text-2xl">$7</p>
+            </div>
+          </div>
+        </div>
+        <!-- Dish -->
+        <div class="w-full md:w-1/2 text-center mb-16" data-aos="fade-up" data-aos-duration="600">
+          <h3 class="text-2xl md:text-3xl mb-5">Dish</h3>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/steak.jpg" alt="Beef Steak Sauce" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Beef Steak Sauce</p>
+                <p>Beef, Special Sauce</p>
+              </span>
+              <p class="text-xl md:text-2xl">$15</p>
+            </div>
+          </div>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/salmon-zucchini.jpg" alt="Salmon Zucchini" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Salmon Zucchini</p>
+                <p>Salmon Fillets, Zucchini</p>
+              </span>
+              <p class="text-xl md:text-2xl">$12</p>
+            </div>
+          </div>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/hero-1.jpg" alt="Australian Beef" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Australian Beef</p>
+                <p>Strawberry, Banana, Beef</p>
+              </span>
+              <p class="text-xl md:text-2xl">$13</p>
+            </div>
+          </div>
+        </div>
+        <!-- Popular -->
+        <div class="w-full md:w-1/2 text-center self-center list-3" data-aos="fade-up" data-aos-duration="600">
+          <h3 class="text-2xl md:text-3xl mb-5">Popular</h3>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/hero-1.jpg" alt="Australian Beef" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Australian Beef</p>
+                <p>Strawberry, Banana, Beef</p>
+              </span>
+              <p class="text-xl md:text-2xl">$13</p>
+            </div>
+          </div>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/hero-2.jpg" alt="Waffles" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Waffles</p>
+                <p>Waffles</p>
+              </span>
+              <p class="text-xl md:text-2xl">$6</p>
+            </div>
+          </div>
+          <div class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full" data-aos="fade-up"
+            data-aos-duration="800">
+            <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
+              <img class="w-full h-full rounded-full" src="./src/images/hero-3.jpg" alt="Pumpkin Soup" />
+            </div>
+            <div class="flex items-start justify-between w-4/5 px-8">
+              <span class="flex flex-col">
+                <p class="text-lg md:text-2xl">Pumpkin Soup</p>
+                <p>Pumpkin, Beef</p>
+              </span>
+              <p class="text-xl md:text-2xl">$8</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team -->
+    <section id="team" class="w-full max-h-1300 pt-16 md:pt-20 xl:pt-24 flex flex-col items-center bg-gray-50">
+      <h2 class="text-xl md:text-2xl xl:text-4xl font-extrabold mb-10 xl:mb-0">
+        Our Team
+      </h2>
+      <div
+        class="h-900 sm:h-screen xl:h-80-screen w-full flex md:flex-wrap md:flex-row flex-col gap-4 xl:gap-0 items-center justify-around xl:justify-center xl:gap-10">
+        <!-- Chef 1 -->
+        <div class="relative w-1/2 sm:w-1/3 h-full md:w-2/5 md:h-1/2 xl:h-4/5 xl:w-1/4 chef-1 flex justify-center"
+          data-aos="fade-up" data-aos-duration="400">
           <div
-            class="w-full md:w-1/2 text-center self-center list-3"
-            data-aos="fade-up"
-            data-aos-duration="600"
-          >
-            <h3 class="text-2xl md:text-3xl mb-5">Popular</h3>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/hero-1.jpg"
-                  alt="Australian Beef"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Australian Beef</p>
-                  <p>Strawberry, Banana, Beef</p>
-                </span>
-                <p class="text-xl md:text-2xl">$13</p>
-              </div>
-            </div>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/hero-2.jpg"
-                  alt="Waffles"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Waffles</p>
-                  <p>Waffles</p>
-                </span>
-                <p class="text-xl md:text-2xl">$6</p>
-              </div>
-            </div>
-            <div
-              class="p-3 border-b-2 border-dotted flex justify-evenly items-center gap-1 w-full"
-              data-aos="fade-up"
-              data-aos-duration="800"
-            >
-              <div class="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20">
-                <img
-                  class="w-full h-full rounded-full"
-                  src="./src/images/hero-3.jpg"
-                  alt="Pumpkin Soup"
-                />
-              </div>
-              <div class="flex items-start justify-between w-4/5 px-8">
-                <span class="flex flex-col">
-                  <p class="text-lg md:text-2xl">Pumpkin Soup</p>
-                  <p>Pumpkin, Beef</p>
-                </span>
-                <p class="text-xl md:text-2xl">$8</p>
+            class="chef-info w-11/12 h-1/6 mb-8 flex flex-col items-center justify-evenly absolute bottom-0 bg-white">
+            <h3 class="font-extrabold">Aaron Patel</h3>
+            <div class="hidden-info w-1/2 h-1/5 opacity-0 transition-opacity duration-1000">
+              <div class="w-full h-full flex items-center justify-between">
+                <i
+                  class="fa-brands fa-facebook text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
+                <i
+                  class="fa-brands fa-square-instagram text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-phone text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Team -->
-      <section
-        id="team"
-        class="w-full max-h-1300 pt-16 md:pt-20 xl:pt-24 flex flex-col items-center bg-gray-50"
-      >
-        <h2
-          class="text-xl md:text-2xl xl:text-4xl font-extrabold mb-10 xl:mb-0"
-        >
-          Our Team
-        </h2>
-        <div
-          class="h-900 sm:h-screen xl:h-80-screen w-full flex md:flex-wrap md:flex-row flex-col gap-4 xl:gap-0 items-center justify-around xl:justify-center xl:gap-10"
-        >
-          <!-- Chef 1 -->
+        <!-- Chef 2 -->
+        <div class="relative w-1/2 sm:w-1/3 h-full md:w-2/5 md:h-1/2 xl:h-4/5 xl:w-1/4 chef-2 flex justify-center"
+          data-aos="fade-up" data-aos-duration="700">
           <div
-            class="relative w-1/2 sm:w-1/3 h-full md:w-2/5 md:h-1/2 xl:h-4/5 xl:w-1/4 chef-1 flex justify-center"
-            data-aos="fade-up"
-            data-aos-duration="400"
-          >
-            <div
-              class="chef-info w-11/12 h-1/6 mb-8 flex flex-col items-center justify-evenly absolute bottom-0 bg-white"
-            >
-              <h3 class="font-extrabold">Aaron Patel</h3>
-              <div
-                class="hidden-info w-1/2 h-1/5 opacity-0 transition-opacity duration-1000"
-              >
-                <div class="w-full h-full flex items-center justify-between">
-                  <i
-                    class="fa-brands fa-facebook text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                  <i
-                    class="fa-brands fa-square-instagram text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                  <i
-                    class="fa-solid fa-phone text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Chef 2 -->
-          <div
-            class="relative w-1/2 sm:w-1/3 h-full md:w-2/5 md:h-1/2 xl:h-4/5 xl:w-1/4 chef-2 flex justify-center"
-            data-aos="fade-up"
-            data-aos-duration="700"
-          >
-            <div
-              class="chef-info w-11/12 h-1/6 mb-8 flex flex-col items-center justify-evenly absolute bottom-0 bg-white"
-            >
-              <h3 class="font-extrabold">Daniel Tebas</h3>
-              <div
-                class="hidden-info w-1/2 h-1/5 opacity-0 transition-opacity duration-1000"
-              >
-                <div class="w-full h-full flex items-center justify-between">
-                  <i
-                    class="fa-brands fa-facebook text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                  <i
-                    class="fa-brands fa-square-instagram text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                  <i
-                    class="fa-solid fa-phone text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Chef 3 -->
-          <div
-            class="relative w-1/2 sm:w-1/3 h-full md:w-2/5 md:h-1/2 xl:h-4/5 xl:w-1/4 chef-3 flex justify-center sm:mt-4 lg:mt-0"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <div
-              class="chef-info w-11/12 h-1/6 mb-8 flex flex-col items-center justify-evenly absolute bottom-0 bg-white"
-            >
-              <h3 class="font-extrabold">Jon Snow</h3>
-              <div
-                class="hidden-info w-1/2 h-1/5 opacity-0 transition-opacity duration-1000"
-              >
-                <div class="w-full h-full flex items-center justify-between">
-                  <i
-                    class="fa-brands fa-facebook text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                  <i
-                    class="fa-brands fa-square-instagram text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                  <i
-                    class="fa-solid fa-phone text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"
-                  ></i>
-                </div>
+            class="chef-info w-11/12 h-1/6 mb-8 flex flex-col items-center justify-evenly absolute bottom-0 bg-white">
+            <h3 class="font-extrabold">Daniel Tebas</h3>
+            <div class="hidden-info w-1/2 h-1/5 opacity-0 transition-opacity duration-1000">
+              <div class="w-full h-full flex items-center justify-between">
+                <i
+                  class="fa-brands fa-facebook text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
+                <i
+                  class="fa-brands fa-square-instagram text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-phone text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Reservation -->
-      <section class="h-140-screen w-full max-h-900 mt-20 bg-white">
+        <!-- Chef 3 -->
         <div
-          id="reservation"
-          class="reservation h-500 xl:h-screen max-h-700 relative"
-        >
+          class="relative w-1/2 sm:w-1/3 h-full md:w-2/5 md:h-1/2 xl:h-4/5 xl:w-1/4 chef-3 flex justify-center sm:mt-4 lg:mt-0"
+          data-aos="fade-up" data-aos-duration="1000">
           <div
-            class="absolute -bottom-44 sm:-bottom-20 md:-bottom-28 xl:-bottom-32 left-3 sm:left-6 md:left-12 xl:left-16 bg-white w-11/12 md:w-1/2 xl:w-2/6 h-full rounded-sm shadow-sm py-6 xl:py-12 px-4 xl:px-8 shadow-black"
-            data-aos="zoom-out-up"
-          >
-            <form
-              class="h-full w-full flex flex-col justify-between items-center"
-            >
-              <div class="w-full text-center">
-                <p class="text-sm sm:text-base md:text-lg text-red-500">
-                  Reservation
-                </p>
-                <h1 class="font-semibold text-xl md:text-2xl xl:text-4xl">
-                  Book Now
-                </h1>
+            class="chef-info w-11/12 h-1/6 mb-8 flex flex-col items-center justify-evenly absolute bottom-0 bg-white">
+            <h3 class="font-extrabold">Jon Snow</h3>
+            <div class="hidden-info w-1/2 h-1/5 opacity-0 transition-opacity duration-1000">
+              <div class="w-full h-full flex items-center justify-between">
+                <i
+                  class="fa-brands fa-facebook text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
+                <i
+                  class="fa-brands fa-square-instagram text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
+                <i
+                  class="fa-solid fa-phone text-sm sm:text-lg lg:text-xl text-red-400 hover:text-red-500 cursor-pointer"></i>
               </div>
-              <div
-                class="w-full h-3/4 flex flex-col justify-between items-center text-lg"
-              >
-                <input
-                  type="text"
-                  name="name"
-                  class="w-full h-10 border px-2 py-1"
-                  placeholder="Name"
-                  required
-                />
-                <input
-                  type="text"
-                  name="email"
-                  class="w-full h-10 border px-2 py-1"
-                  placeholder="Email"
-                  required
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  class="w-full h-10 border px-2 py-1"
-                  placeholder="Phone"
-                  required
-                />
-                <div class="w-full h-16 flex justify-evenly items-center">
-                  <input
-                    type="date"
-                    name="date"
-                    class="w-2/5 h-2/3 border px-2 py-1"
-                    placeholder="Date"
-                    required
-                  />
-                  <input
-                    type="time"
-                    name="time"
-                    class="w-2/5 h-2/3 border px-2 py-1"
-                    placeholder="Time"
-                    required
-                  />
-                </div>
-                <input
-                  type="number"
-                  max="10"
-                  min="0"
-                  name="Person"
-                  class="w-full h-10 border px-2 py-1"
-                  placeholder="Person"
-                  required
-                />
-                <textarea
-                  name="textarea"
-                  class="h-24 sm:h-32 md:h-40 w-full border px-2 py-1"
-                  cols="30"
-                  rows="10"
-                  placeholder="Your Message"
-                ></textarea>
-              </div>
-              <button
-                id="submitReservation"
-                type="submit"
-                name="submit form for reservations"
-                class="bg-red-500 h-6 md:h-10 flex justify-center items-center rounded-full px-4 py-4 text-sm md:text-lg font-[700] text-white hover:bg-red-600 duration-300"
-              >
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer class="max-h-500 h-40 w-full flex justify-center items-center">
-      <section
-        class="h-full w-full max-w-screen-2xl flex flex-col sm:flex-row items-center justify-evenly bg-gray-50"
-      >
+      </div>
+    </section>
+    <!-- Reservation -->
+    <section class="h-140-screen w-full max-h-900 mt-20 bg-white">
+      <div id="reservation" class="reservation h-500 xl:h-screen max-h-700 relative">
         <div
-          class="h-full w-full sm:w-1/3 flex flex-col items-center justify-center"
-        >
-          <p>
-            Image by
-            <a
-              target="_blank"
-              class="text-red-400 hover:text-red-600 font-bold duration-300"
-              href="https://www.freepik.com/free-photo/sandwich-with-egg-served-with-lettuce_7608193.htm#page=2&query=breakfast%20food&position=3&from_view=search&track=ais"
-              >KamranAydinov</a
-            >
-            on Freepik
-          </p>
-          <p>
-            Image by
-            <a
-              target="_blank"
-              class="text-red-400 hover:text-red-600 font-bold duration-300"
-              href="https://www.freepik.com/free-photo/english-breakfast-toast-egg-bacon-vegetables-rustic-style-wooden-table_7681555.htm#page=2&query=breakfast%20food&position=12&from_view=search&track=ais#position=12&page=2&query=breakfast%20food"
-              >timolina</a
-            >
-            on Freepik
-          </p>
+          class="absolute -bottom-44 sm:-bottom-20 md:-bottom-28 xl:-bottom-32 left-3 sm:left-6 md:left-12 xl:left-16 bg-white w-11/12 md:w-1/2 xl:w-2/6 h-full rounded-sm shadow-sm py-6 xl:py-12 px-4 xl:px-8 shadow-black"
+          data-aos="zoom-out-up">
+          <form class="h-full w-full flex flex-col justify-between items-center">
+            <div class="w-full text-center">
+              <p class="text-sm sm:text-base md:text-lg text-red-500">
+                Reservation
+              </p>
+              <h1 class="font-semibold text-xl md:text-2xl xl:text-4xl">
+                Book Now
+              </h1>
+            </div>
+            <div class="w-full h-3/4 flex flex-col justify-between items-center text-lg">
+              <input type="text" name="name" class="w-full h-10 border px-2 py-1" placeholder="Name" required />
+              <input type="text" name="email" class="w-full h-10 border px-2 py-1" placeholder="Email" required />
+              <input type="text" name="phone" class="w-full h-10 border px-2 py-1" placeholder="Phone" required />
+              <div class="w-full h-16 flex justify-evenly items-center">
+                <input type="date" name="date" class="w-2/5 h-2/3 border px-2 py-1" placeholder="Date" required />
+                <input type="time" name="time" class="w-2/5 h-2/3 border px-2 py-1" placeholder="Time" required />
+              </div>
+              <input type="number" max="10" min="0" name="Person" class="w-full h-10 border px-2 py-1"
+                placeholder="Person" required />
+              <textarea name="textarea" class="h-24 sm:h-32 md:h-40 w-full border px-2 py-1" cols="30" rows="10"
+                placeholder="Your Message"></textarea>
+            </div>
+            <button id="submitReservation" type="submit" name="submit form for reservations"
+              class="bg-red-500 h-6 md:h-10 flex justify-center items-center rounded-full px-4 py-4 text-sm md:text-lg font-[700] text-white hover:bg-red-600 duration-300">
+              Send Message
+            </button>
+          </form>
         </div>
-        <div
-          class="w-full sm:w-1/3 h-full flex flex-col items-center justify-center"
-        >
-          <p>
-            More Image and UI by
-            <a
-              target="_blank"
-              class="text-red-400 hover:text-red-600 font-bold duration-300"
-              href="https://freehtml5.co/resto-free-responsive-bootstrap-4-template-for-restaurants/"
-              >FREEHTML5.CO</a
-            >
-          </p>
-          <p>
-            &copy;
-            <a
-              target="_blank"
-              class="text-red-400 hover:text-red-600 font-bold duration-300"
-              href="https://freehtml5.co/"
-              >FREEHTML5.CO</a
-            >
-          </p>
-        </div>
-      </section>
-    </footer>
-    <script src="/src/script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="max-h-500 h-40 w-full flex justify-center items-center">
+    <section class="h-full w-full max-w-screen-2xl flex flex-col sm:flex-row items-center justify-evenly bg-gray-50">
+      <div class="h-full w-full sm:w-1/3 flex flex-col items-center justify-center">
+        <p>
+          Image by
+          <a target="_blank" class="text-red-400 hover:text-red-600 font-bold duration-300"
+            href="https://www.freepik.com/free-photo/sandwich-with-egg-served-with-lettuce_7608193.htm#page=2&query=breakfast%20food&position=3&from_view=search&track=ais">KamranAydinov</a>
+          on Freepik
+        </p>
+        <p>
+          Image by
+          <a target="_blank" class="text-red-400 hover:text-red-600 font-bold duration-300"
+            href="https://www.freepik.com/free-photo/english-breakfast-toast-egg-bacon-vegetables-rustic-style-wooden-table_7681555.htm#page=2&query=breakfast%20food&position=12&from_view=search&track=ais#position=12&page=2&query=breakfast%20food">timolina</a>
+          on Freepik
+        </p>
+      </div>
+      <div class="w-full sm:w-1/3 h-full flex flex-col items-center justify-center">
+        <p>
+          More Image and UI by
+          <a target="_blank" class="text-red-400 hover:text-red-600 font-bold duration-300"
+            href="https://freehtml5.co/resto-free-responsive-bootstrap-4-template-for-restaurants/">FREEHTML5.CO</a>
+        </p>
+        <p>
+          &copy;
+          <a target="_blank" class="text-red-400 hover:text-red-600 font-bold duration-300"
+            href="https://freehtml5.co/">FREEHTML5.CO</a>
+        </p>
+      </div>
+    </section>
+  </footer>
+  <script src="/src/script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
 </html>
